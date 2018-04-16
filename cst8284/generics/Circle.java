@@ -48,10 +48,10 @@ public class Circle extends BasicShape {
     return ("Circle Overrides " + super.toString());
   }
 
-  // TODO test
-  public boolean equals(Object that) {
-    return (that instanceof Circle &&
-            this.getWidth() == ((Circle) that).getWidth());
-  }
+  // test
+//  public boolean equals(Object that) {
+//    return (that instanceof Circle &&
+//            this.getWidth() == ((Circle) that).getWidth());
+//  }
 
 }

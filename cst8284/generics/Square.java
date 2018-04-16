@@ -36,16 +36,16 @@ public class Square extends BasicShape {
     return this.getWidth() * 4;
   }
 
-  // TODO test
+  // test
   @Override
   public String toString(){
     return ("Square Overrides " + super.toString());
   }
  
-  // TODO test
-  public boolean equals(Object that) {
-    return (that instanceof Square &&
-            this.getWidth() == ((Square) that).getWidth());
-  }
+  // test
+//  public boolean equals(Object that) {
+//    return (that instanceof Square &&
+//            this.getWidth() == ((Square) that).getWidth());
+//  }
   
 }

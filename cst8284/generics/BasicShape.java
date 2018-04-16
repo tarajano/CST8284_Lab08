@@ -12,6 +12,11 @@ public abstract class BasicShape {
 		return ("BasicShape Overrides " + super.toString());
 	}
 	
+	@Override
+	public boolean equals(Object o) {
+	  return (this.getArea() == ((BasicShape) o).getArea());
+	}
+	
 	public abstract double getArea();
 	public abstract double getPerimeter();
 	

@@ -53,5 +53,10 @@ public class SolidObject <T extends BasicShape> {
     }	
     return solidTypeEquivalent;
   }
+  
+  @Override
+  public boolean equals(Object o) {
+    return (this.getVolume() == ((SolidObject) o).getVolume());
+  }
 
 }

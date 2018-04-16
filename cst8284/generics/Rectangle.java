@@ -57,12 +57,12 @@ public class Rectangle extends Square {
     return ("Rectangle Overrides " + super.toString());
   }
   
-  // TODO test
-  @Override
-  public boolean equals(Object that) {
-    return (that instanceof Rectangle && // are both Rectangles ?
-            super.equals(that) &&  // have equal widths?
-            this.getHeight() == ((Rectangle) that).getHeight() //have equal heights?
-            );
-  }
+  //  test
+//  @Override
+//  public boolean equals(Object that) {
+//    return (that instanceof Rectangle && // are both Rectangles ?
+//            super.equals(that) &&  // have equal widths?
+//            this.getHeight() == ((Rectangle) that).getHeight() //have equal heights?
+//            );
+//  }
 }
