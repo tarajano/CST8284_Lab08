@@ -7,47 +7,33 @@ import java.util.ArrayList;
 
 public class Table {
  
-  private static int row, col;
+  private static int row;
+  private static int span = 14;
   
-  public Table() {
-  }
+  public Table() {}
   
   public static <E> void displayEqualityTable(ArrayList<E> arList){
 
     // Print columns headers
     resetRow();
-    resetCol();
-    int classNameLen = getClassSimpleName(arList.get(0)).length();
-    String headerPadding = getHeaderPadding(classNameLen);
-  
-    System.out.print(headerPadding);
+    System.out.print(getFormatedOutput());
     for (E e: arList) {
-      System.out.print( "  " + getClassSimpleName(e) + getRow());
+      System.out.print(getFormatedOutput(getClassSimpleName(e) + getRow()));
       incRow();
     }
     System.out.println("");
 
-    
     //  Print out each row,starting with the name of the object
     resetRow();
-    resetCol();
     for (E eRow: arList){
-      System.out.print(getClassSimpleName(eRow) + getRow() + "  ");
+      System.out.print(getFormatedOutput(getClassSimpleName(eRow) + getRow()));
       incRow();
-      for (E eCol: arList) {
-        System.out.print( eRow.equals(eCol) + headerPadding);
-      }
+      for (E eCol: arList)
+        System.out.print( getFormatedOutput(eRow.equals(eCol)) );
       System.out.println();
     }
     
-  }
-  
-  private static String getHeaderPadding(int repeat) {
-    StringBuilder sb = new StringBuilder();
-    while (repeat-- >= 0) {
-      sb.append(" ");
-    }
-    return sb.toString();
+    System.out.println("\n");
   }
   
   private static <E> String getClassSimpleName(E e) {
@@ -65,17 +51,26 @@ public class Table {
   private static void resetRow() {
     Table.row = 0;
   }
+  
+  private static String getFormatedOutput(String in) {
+    StringBuilder sb = new StringBuilder(in);
+    while (sb.length() < span)
+      sb.insert(0, " ");
+    return sb.toString();
+  } 
 
-  private static void resetCol() {
-    Table.col = 0;
+  private static String getFormatedOutput() {
+    StringBuilder sb = new StringBuilder();
+    while (sb.length() < span)
+      sb.insert(0, " ");
+    return sb.toString();
   }
   
-  private static int getCol() {
-    return Table.col;
-  }
-
-  private static void incCol() {
-    Table.col += 1;
-  }
-
+  private static String getFormatedOutput(boolean in) {
+    StringBuilder sb = new StringBuilder( Boolean.toString(in) );
+    while (sb.length() < span)
+      sb.insert(0, " ");
+    return sb.toString();
+  } 
+  
 }
