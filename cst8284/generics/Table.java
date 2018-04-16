@@ -17,8 +17,12 @@ public class Table {
     // Print columns headers
     resetRow();
     resetCol();
+    int classNameLen = getClassSimpleName(arList.get(0)).length();
+    String headerPadding = getHeaderPadding(classNameLen);
+  
+    System.out.print(headerPadding);
     for (E e: arList) {
-      System.out.print("  " + getClassSimpleName(e) + getRow());
+      System.out.print( "  " + getClassSimpleName(e) + getRow());
       incRow();
     }
     System.out.println("");
@@ -31,11 +35,19 @@ public class Table {
       System.out.print(getClassSimpleName(eRow) + getRow() + "  ");
       incRow();
       for (E eCol: arList) {
-        System.out.print( eRow.equals(eCol) + "  ");
+        System.out.print( eRow.equals(eCol) + headerPadding);
       }
       System.out.println();
     }
     
+  }
+  
+  private static String getHeaderPadding(int repeat) {
+    StringBuilder sb = new StringBuilder();
+    while (repeat-- >= 0) {
+      sb.append(" ");
+    }
+    return sb.toString();
   }
   
   private static <E> String getClassSimpleName(E e) {

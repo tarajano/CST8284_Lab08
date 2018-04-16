@@ -25,29 +25,27 @@ public class GenericTableDemo {
   
   public static void main(String[] args) {
     
-    Table tb = new Table();
+//    Table tb = new Table();
     
     // Integers
-    // tb.displayEqualityTable(new ArrayList<Integer>(Arrays.asList(1,2,2,1)));
+    // Table.displayEqualityTable(new ArrayList<Integer>(Arrays.asList(1,2,2,1)));
 
     // Strings 
-    // tb.displayEqualityTable(new ArrayList<String>(Arrays.asList( myStrings )));
+    // Table.displayEqualityTable(new ArrayList<String>(Arrays.asList( myStrings )));
     
     // BasicShapes
-    /*
     basicShapes.add(new Circle(3));
     basicShapes.add(new Square(6));
     basicShapes.add(new Rectangle(10, 9));
     basicShapes.add(new Rectangle(3, 6));
-    tb.displayEqualityTable(basicShapes);
-    */
+    Table.displayEqualityTable(basicShapes);
     
     // SolidObjects 
-    solidObjects.add(new SolidObject<BasicShape>(new Circle(3), 5));
-    solidObjects.add(new SolidObject<BasicShape>(new Rectangle(10, 9), 2));
-    solidObjects.add(new SolidObject<BasicShape>(new Rectangle(3, 6), 10));
-    solidObjects.add(new SolidObject<BasicShape>(new Square(6)));
-    tb.displayEqualityTable(solidObjects);
+//    solidObjects.add(new SolidObject<BasicShape>(new Circle(3), 5));
+//    solidObjects.add(new SolidObject<BasicShape>(new Rectangle(10, 9), 2));
+//    solidObjects.add(new SolidObject<BasicShape>(new Rectangle(3, 6), 10));
+//    solidObjects.add(new SolidObject<BasicShape>(new Square(6)));
+//    Table.displayEqualityTable(solidObjects);
     
   }
 
